@@ -36,6 +36,7 @@ sudo chmod -R 777 instalador
 ```bash
 cd instalador
 ```
+```bash
 sudo ./install_primaria
 ```
 
