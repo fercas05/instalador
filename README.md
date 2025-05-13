@@ -1,4 +1,19 @@
-
+```bash
+sudo apt update
+sudo apt upgrade -y
+sudo apt full-upgrade -y
+```
+🧰 Instalar Git
+```bash
+sudo apt install git -y
+```
+🔗 Instalar Node.js 16
+```bash
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt install -y nodejs
+node -v
+npm -v
+```
 Agregue un usuario y contrasena esa contrasena no la olvide jamas
 
 ```bash
