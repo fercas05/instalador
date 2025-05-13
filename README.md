@@ -7,13 +7,6 @@ sudo apt full-upgrade -y
 ```bash
 sudo apt install git -y
 ```
-🔗 Instalar Node.js 18
-```bash
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt install -y nodejs
-node -v
-npm -v
-```
 Agregue un usuario y contrasena esa contrasena no la olvide jamas
 
 ```bash
@@ -23,9 +16,15 @@ sudo adduser deploy
 sudo usermod -aG sudo deploy
 ```
 
+🔗 Instalar Node.js 18
+```bash
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install -y nodejs
+node -v
+npm -v
+```
+
 DESCARGAR EL INSTALADOR E INICIAR LA PRIMERA INSTALACIÓN (UTILIZAR SÓLO PARA LA PRIMERA INSTALACIÓN): cambie el link de github por el suyo y el nombre de la carpeta por el nombre del proyecto que le agregue
-
-
 
 ```bash
 git clone https://github.com/karuapp/instalador
