@@ -1,74 +1,102 @@
-actulizar ubuntu
+
+markdown
+Copiar
+Editar
+# 🚀 Instalador 3.0 - Deploy Automatizado para Proyecto Personalizado
+Este script automatiza la instalación de un entorno completo para tu proyecto, incluyendo Node.js, Git, PM2, NGINX, y más.
+
+## 🛠️ Requisitos
+- Ubuntu actualizado (20.04 o superior)
+- Usuario con permisos `sudo`
+
+## 🔧 Actualizar Ubuntu
 ```bash
 sudo apt update
 sudo apt upgrade -y
 sudo apt full-upgrade -y
-```
-
-instalar git
-```bash
+🧰 Instalar Git
+bash
+Copiar
+Editar
 sudo apt install git -y
-```
-Agregue un usuario y contrasena esa contrasena no la olvide jamas
-
-```bash
+👤 Crear Usuario
+bash
+Copiar
+Editar
 sudo adduser deploy
-```
-```bash
 sudo usermod -aG sudo deploy
-```
+🚀 Instalación Inicial
+⚠️ Usar solo en la primera instalación
+Cambia el enlace y el nombre de la carpeta por los de tu proyecto:
 
-DESCARGAR EL INSTALADOR E INICIAR LA PRIMERA INSTALACIÓN (UTILIZAR SÓLO PARA LA PRIMERA INSTALACIÓN): cambie el link de github por el suyo y el nombre de la carpeta por el nombre del proyecto que le agregue
+bash
+Copiar
+Editar
+sudo apt install -y git && \
+git clone https://github.com/TU-USUARIO/TU-REPO && \
+sudo chmod -R 777 TU-REPO && \
+cd TU-REPO && \
+sudo ./install_primaria
+🔁 Instalaciones adicionales
+bash
+Copiar
+Editar
+cd TU-REPO && sudo ./instalar_instancia
+⚙️ NGINX (solo si es necesario)
+Editar configuración de NGINX:
 
+bash
+Copiar
+Editar
+sudo nano /etc/nginx/nginx.conf
+Agregar antes de # server_tokens off;:
 
-
-```bash
-sudo apt install -y git && git clone https://github.com/karuapp/instalador-3.0 && sudo chmod -R 777 instalador-3.0 && cd instalador-3.0 && sudo ./install_primaria
-```
-
-ACCEDER AL DIRECTORIO DE INSTALADOR E INICIAR INSTALACIONES ADICIONALES (USE ESTE COMANDO PARA UNA SEGUNDA O MÁS INSTALACIÓN:
-```bash
-cd ./instalador-3.0 && sudo ./instalar_instancia
-```
-Edite el archivo de configuración de nginx: (solo si es necesario)
-```bash
-nano /etc/nginx/nginx.conf
-```
-
-Agregue el encabezado a continuación: (justo encima de # server_tokens off;)  (solo si es necesario)
-```bash
+nginx
+Copiar
+Editar
 underscores_in_headers on;
-```
+Verificar y reiniciar:
 
-Presiona Ctrl y X para cerrar el editor y Y para guardar los cambios.
-Prueba los cambios en nginx:  (solo si es necesario)
-```bash
-nginx -t
-```
-
-Reinicia el servicio:  (solo si es necesario)
-```bash
+bash
+Copiar
+Editar
+sudo nginx -t
 sudo service nginx restart
-```
+📅 CRON (solo si es necesario)
+Editar tareas programadas:
 
-```bash
-reinicio del servicio nginx
-```
-
-Configura CRON  (solo si es necesario)
-```bash
+bash
+Copiar
+Editar
 crontab -e
+Agregar:
+
+cron
+Copiar
+Editar
 0 */6 * * * /usr/bin/node /usr/bin/pm2
-```
+🌐 Cambiar puerto del frontend (solo si es necesario)
+Editar archivo NGINX:
 
-reiniciar todo  (solo si es necesario)
+bash
+Copiar
+Editar
+sudo nano /etc/nginx/sites-enabled/instalacion-frontend
+Cambiar línea:
 
-cambiar el puerto en etc/nginx/sites-enabled nano instalacion-frontend  (solo si es necesario)
-```bash
-  proxy_pass http://localhost:3004; //por el puerto nuevo
-```
-y cambiar el server.js del frontend por el puerto y reiniciar pm2 y nginix  (solo si es necesario)
+nginx
+Copiar
+Editar
+proxy_pass http://localhost:3004;
+Editar el archivo server.js del frontend con el nuevo puerto y reiniciar servicios:
 
+bash
+Copiar
+Editar
+pm2 restart all
+sudo service nginx restart
+🔒 Licencia
+Instalador script by Manuel Davila está licenciado bajo CC BY 4.0
 
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/karuapp/install2.0">Instalador script</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://manueldavila.com">Manuel Davila</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>
-
+✍️ Autor
+Manuel Davila – Adaptado por TuNombre
