@@ -1,3 +1,11 @@
+actulizar ubuntu
+
+sudo apt update
+sudo apt upgrade -y
+sudo apt full-upgrade -y
+
+instalar git
+sudo apt install git -y
 
 Agregue un usuario y contrasena esa contrasena no la olvide jamas
 
