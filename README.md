@@ -7,9 +7,9 @@ sudo apt full-upgrade -y
 ```bash
 sudo apt install git -y
 ```
-🔗 Instalar Node.js 16
+🔗 Instalar Node.js 18
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt install -y nodejs
 node -v
 npm -v
@@ -28,7 +28,15 @@ DESCARGAR EL INSTALADOR E INICIAR LA PRIMERA INSTALACIÓN (UTILIZAR SÓLO PARA L
 
 
 ```bash
-sudo apt install -y git && git clone https://github.com/karuapp/instalador-3.0 && sudo chmod -R 777 instalador-3.0 && cd instalador-3.0 && sudo ./install_primaria
+git clone https://github.com/karuapp/instalador
+```
+```bash
+sudo chmod -R 777 instalador
+```
+```bash
+cd instalador
+```
+sudo ./install_primaria
 ```
 
 ACCEDER AL DIRECTORIO DE INSTALADOR E INICIAR INSTALACIONES ADICIONALES (USE ESTE COMANDO PARA UNA SEGUNDA O MÁS INSTALACIÓN:
