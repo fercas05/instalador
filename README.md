@@ -27,7 +27,7 @@ npm -v
 DESCARGAR EL INSTALADOR E INICIAR LA PRIMERA INSTALACIÓN (UTILIZAR SÓLO PARA LA PRIMERA INSTALACIÓN): cambie el link de github por el suyo y el nombre de la carpeta por el nombre del proyecto que le agregue
 
 ```bash
-git clone https://github.com/karuapp/instalador
+git clone https://github.com/fercas05/instalador
 ```
 ```bash
 sudo chmod -R 777 instalador
