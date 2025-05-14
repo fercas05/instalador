@@ -1,6 +1,6 @@
 ```bash
-sudo apt update
-sudo apt upgrade -y
+apt update
+apt upgrade
 ```
 🧰 Instalar Git
 ```bash
